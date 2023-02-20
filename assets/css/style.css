@@ -4,6 +4,75 @@
     box-sizing: border-box;
 }
 
+body{
+    width: 100%;
+    height: 100vh;
+}
+
 .navbar{
     padding: 1rem;
+}
+
+.home{
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 3rem;
+}
+
+.first-section{
+    margin: 2rem 3rem;
+    padding: 0.5rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.checkbox > label{
+    margin: 0 1.5rem 0 0.3rem;
+}
+
+.card-section{
+    margin: 4rem 3rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer{
+    height: 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-network{
+    margin: 0 3rem;
+}
+
+.fa-2xl{
+    margin-left: 1.5rem;
+}
+
+h3{
+    margin: 0 5rem;
+}
+
+.form-contact{
+    margin: 5rem 25rem;
+}
+
+.form-group{
+    flex-direction: column;
+}
+
+.form-group > input{
+    margin-bottom: 1rem;
+}
+
+.btn-submit{
+    align-self: flex-end;
+    border-radius: 0.5rem;
+    border-color: darkmagenta;
+    width:fit-content;
+    height: fit-content;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
 }

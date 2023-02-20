@@ -9,9 +9,111 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!--CSS-->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://kit.fontawesome.com/639acf81e7.js" crossorigin="anonymous"></script>
     <title>Past Events</title>
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <header>
+        <nav class="navbar bg-light">
+            <div class="container-fluid justify-content-space-between">
+              <a class="navbar-brand" href="#">
+                <img src="./assets/img/logo_amazing_events.png" alt="logo_amazing_events" width="100" height="25">
+              </a>
+              <form>
+                <button class="btn btn-outline-success" type="button" onclick="location.href='./index.html'">Home</button>
+                <button class="btn btn-outline-secondary" type="button" onclick="location.href='./upcomingEvents.html'">Upcoming Events</button>
+                <button class="btn btn-outline-success" type="button" onclick="location.href='#'">Past Events</button>
+                <button class="btn btn-outline-secondary" type="button" onclick="location.href='./contact.html'">Contact</button>
+                <button class="btn btn-outline-success" type="button" onclick="location.href='./stats.html'">Stats</button>
+              </form>
+            </div>
+          </nav>
+    </header>
+    <main>
+      <div class="text-center">
+          <div class="home border bg-light d-flex">
+            <i class="fa-solid fa-angle-left fa-2xl"></i>
+            <h1 class="p-3">Past Events</h1>
+            <i class="fa-solid fa-angle-right fa-2xl"></i>
+          </div>
+      </div>
+      <div class="first-section d-flex">
+        <div class="checkbox d-flex">
+          <input type="checkbox" id="position1" name="position1" value="Category">
+          <label for="position1">Category</label>
+          <input type="checkbox" id="position2" name="position2" value="Category">
+          <label for="position2">Category</label>
+          <input type="checkbox" id="position3" name="position3" value="Category">
+          <label for="position3">Category</label>
+          <input type="checkbox" id="position4" name="position4" value="Category">
+          <label for="position4">Category</label>
+          <input type="checkbox" id="position5" name="position5" value="Category">
+          <label for="position5">Category</label>
+        </div>
+        <div>
+          <form class="search d-flex" role="search">
+            <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-danger" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="card-section d-flex">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build</p>
+            <div class="d-flex">
+              <P>Precio $0000</P>
+              <a href="#" class="btn btn-primary">Ver mas...</a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build</p>
+            <div class="d-flex footer-card">
+              <P>Precio $0000</P>
+              <a href="#" class="btn btn-primary">Ver mas...</a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build</p>
+            <div class="d-flex">
+              <P>Precio $0000</P>
+              <a href="#" class="btn btn-primary">Ver mas...</a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build</p>
+            <div class="d-flex">
+              <P>Precio $0000</P>
+              <a href="#" class="btn btn-primary">Ver mas...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  <footer class="border bg-light d-flex">
+    <div class="social-network d-flex">
+      <i class="fa-brands fa-instagram fa-2xl"></i>
+      <i class="fa-brands fa-facebook fa-2xl"></i>
+      <i class="fa-brands fa-whatsapp fa-2xl"></i>
+    </div>
+    <div>
+      <h3>Cohort</h3>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
