@@ -9,27 +9,65 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!--CSS-->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://kit.fontawesome.com/639acf81e7.js" crossorigin="anonymous"></script>
     <title>Details</title>
 </head>
 <body>
     <header>
-        <nav class="navbar bg-light">
-            <div class="container-fluid justify-content-space-between">
-              <a class="navbar-brand" href="#">
-                <img src="./assets/img/logo_amazing_events.png" alt="logo_amazing_events" width="100" height="25">
-              </a>
-              <form>
-                <button class="btn btn-outline-success" type="button" onclick="location.href='./index.html'">Home</button>
-                <button class="btn btn-outline-secondary" type="button" onclick="location.href='./upcomingEvents.html'">Upcoming Events</button>
-                <button class="btn btn-outline-success" type="button" onclick="location.href='./pastEvents.html'">Past Events</button>
-                <button class="btn btn-outline-secondary" type="button" onclick="location.href='./contact.html'">Contact</button>
-                <button class="btn btn-outline-success" type="button" onclick="location.href='./stats.html'">Stats</button>
-              </form>
-            </div>
-          </nav>
+      <nav class="navbar">
+        <div class="container-fluid justify-content-space-between">
+          <a class="navbar-brand" href="#">
+            <img src="./assets/img/logo_amazing_events.png" alt="logo_amazing_events" width="100" height="25">
+          </a>
+          <div>
+            <button class="btn btn-nav" type="button" onclick="location.href='./index.html'">Home</button>
+            <button class="btn btn-nav" type="button" onclick="location.href='./upcomingEvents.html'">Upcoming Events</button>
+            <button class="btn btn-nav" type="button" onclick="location.href='./pastEvents.html'">Past Events</button>
+            <button class="btn btn-nav" type="button" onclick="location.href='./contact.html'">Contact</button>
+            <button class="btn btn-nav" type="button" onclick="location.href='#'">Details</button>
+            <button class="btn btn-nav" type="button" onclick="location.href='./stats.html'">Stats</button>
+          </div>
+        </div>
+      </nav>
+      <div class="text-center">
+        <div class="home border d-flex">
+          <i class="fa-solid fa-angle-left fa-2xl"></i>
+          <h1 class="p-3">Details</h1>
+          <i class="fa-solid fa-angle-right fa-2xl"></i>
+        </div>
+    </div>
     </header>
-    <main></main>
-    <footer></footer>
+    <main class="details d-flex">
+      <div class="card card-details" >
+        <div class="row">
+          <div class="col-md-7 img-details">
+            <img src="./assets/img/marathon.jpg" class="img-fluid" alt="...">
+          </div>
+          <div class="col-md-5">
+            <div class="card-body-details">
+              <h5 class="card-title">Name</h5>
+              <p class="card-text">Date:</p>
+              <p class="card-text">Description:</p>
+              <p class="card-text">Category:</p>
+              <p class="card-text">Place:</p>
+              <p class="card-text">Capacity:</p>
+              <p class="card-text">Assistance:</p>
+              <p class="card-text">Price:</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="border d-flex">
+      <div class="social-network d-flex">
+        <i class="fa-brands fa-instagram fa-2xl"></i>
+        <i class="fa-brands fa-facebook fa-2xl"></i>
+        <i class="fa-brands fa-whatsapp fa-2xl"></i>
+      </div>
+      <div>
+        <h3>Cohort</h3>
+      </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -14,31 +14,32 @@
 </head>
 <body>
     <header>
-        <nav class="navbar bg-light">
+        <nav class="navbar">
             <div class="container-fluid justify-content-space-between">
               <a class="navbar-brand" href="#">
-                <img src="./assets/img/logo_amazing_events.png" alt="logo_amazing_events" width="100" height="25">
+                <img src="./assets/img/logo_amazing_events.png" alt="logo_amazing_events" width="130" height="30">
               </a>
               <div>
-                <button class="btn btn-outline-danger" type="button" onclick="location.href='#'">Home</button>
-                <button class="btn btn-outline-danger" type="button" onclick="location.href='./upcomingEvents.html'">Upcoming Events</button>
-                <button class="btn btn-outline-danger" type="button" onclick="location.href='./pastEvents.html'">Past Events</button>
-                <button class="btn btn-outline-danger" type="button" onclick="location.href='./contact.html'">Contact</button>
-                <button class="btn btn-outline-danger" type="button" onclick="location.href='./stats.html'">Stats</button>
+                <button class="btn btn-nav" type="button" onclick="location.href='#'">Home</button>
+                <button class="btn btn-nav" type="button" onclick="location.href='./upcomingEvents.html'">Upcoming Events</button>
+                <button class="btn btn-nav" type="button" onclick="location.href='./pastEvents.html'">Past Events</button>
+                <button class="btn btn-nav" type="button" onclick="location.href='./contact.html'">Contact</button>
+                <button class="btn btn-nav" type="button" onclick="location.href='./details.html'">Details</button>
+                <button class="btn btn-nav" type="button" onclick="location.href='./stats.html'">Stats</button>
               </div>
             </div>
           </nav>
     </header>
     <main>
         <div class="text-center">
-            <div class="home border bg-light d-flex">
+            <div class="home border d-flex">
               <i class="fa-solid fa-angle-left fa-2xl"></i>
               <h1 class="p-3">Home</h1>
               <i class="fa-solid fa-angle-right fa-2xl"></i>
             </div>
         </div>
         <div class="first-section d-flex">
-          <div class="checkbox d-flex">
+          <div class="checkbox d-flex text-white">
             <input type="checkbox" id="position1" name="position1" value="Category">
             <label for="position1">Category</label>
             <input type="checkbox" id="position2" name="position2" value="Category">
@@ -53,58 +54,58 @@
           <div>
             <form class="search d-flex" role="search">
               <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-danger" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button class="btn btn-nav" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
           </div>
         </div>
         <div class="card-section d-flex">
-          <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+          <div class="card card-index">
+            <img src="./assets/img/cinema.jpg" class="card-img-top" alt="cinema">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build</p>
-              <div class="d-flex">
-                <P>Precio $0000</P>
-                <a href="#" class="btn btn-primary">Ver mas...</a>
-              </div>
+              <h5 class="card-title text-center">Cinema</h5>
+              <p class="card-text text-center">Some quick example text to build</p>
+            </div>
+            <div class="footer-card d-flex">
+              <P>Precio $0000</P>
+              <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
+            </div> 
+          </div>
+          <div class="card card-index">
+            <img src="./assets/img/costume_party.jpg" class="card-img-top" alt="costume_party">
+            <div class="card-body">
+              <h5 class="card-title text-center">Costume Party</h5>
+              <p class="card-text text-center">Some quick example text to build</p>
+            </div>
+            <div class="footer-card d-flex">
+              <P>Precio $0000</P>
+              <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
             </div>
           </div>
-          <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+          <div class="card card-index">
+            <img src="./assets/img/food_fair.jpg" class="card-img-top" alt="food_fair">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build</p>
-              <div class="d-flex footer-card">
-                <P>Precio $0000</P>
-                <a href="#" class="btn btn-primary">Ver mas...</a>
-              </div>
+              <h5 class="card-title text-center">Food Fair</h5>
+              <p class="card-text text-center">Some quick example text to build</p>
+            </div>
+            <div class="footer-card d-flex">
+              <P>Precio $0000</P>
+              <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
             </div>
           </div>
-          <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+          <div class="card card-index">
+            <img src="./assets/img/marathon.jpg" class="card-img-top" alt="marathon">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build</p>
-              <div class="d-flex">
-                <P>Precio $0000</P>
-                <a href="#" class="btn btn-primary">Ver mas...</a>
-              </div>
+              <h5 class="card-title text-center">Marathon</h5>
+              <p class="card-text text-center">Some quick example text to build</p>
             </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build</p>
-              <div class="d-flex">
-                <P>Precio $0000</P>
-                <a href="#" class="btn btn-primary">Ver mas...</a>
-              </div>
+            <div class="footer-card d-flex">
+              <P>Precio $0000</P>
+              <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
             </div>
           </div>
         </div>
     </main>
-    <footer class="border bg-light d-flex">
+    <footer class="border d-flex">
       <div class="social-network d-flex">
         <i class="fa-brands fa-instagram fa-2xl"></i>
         <i class="fa-brands fa-facebook fa-2xl"></i>
