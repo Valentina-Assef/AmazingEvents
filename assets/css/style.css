@@ -59,32 +59,49 @@ main{
     background-color: rgb(233, 232, 232, 0.7);
 }
 
-.first-section{
-    margin: 1.5rem 3rem;
-    padding: 0.5rem 2rem;
+/*Checkbox y search*/
+.first-section {
+    margin: 2rem 4rem; 
+}
+
+.check-and-search{
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+}
+
+.checkbox {
+    display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
 }
 
-.div-checkbox{
-    flex-direction: column;
-    color: #fff;
+.checkbox > p > label{
+  margin-right: 2rem;
 }
 
-.checkbox-toggler{
-    color: black;
-    background-color: #d90368;
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.checkbox > label{
-    margin: 0 1.5rem 0 0.3rem;
+.form-control {
+  width: 100%;
+  max-width: 200px;
 }
 
-
+@media (max-width: 400px) {
+    .checkbox {
+        font-size: 13px;
+    }
+}
 
 .card-section{
-    margin: 1rem 3rem;
+    margin: 2.5rem 3rem;
     justify-content: space-around;
     flex-wrap: wrap;
 }
@@ -107,15 +124,6 @@ main{
 .btn-see-more, .btn-submit{
     background-color: #d90368;
     color: #fff;
-}
-
-footer{
-    min-height: 8vh;
-    background-color: rgb(233, 232, 232, 0.7);
-}
-
-.container-footer{
-    align-items: center;
 }
 
 .fa-2xl{
@@ -156,34 +164,41 @@ footer{
     margin: 4rem 1rem 0rem 0;
 }
 
+/*Details*/
 .details{
-    min-height: 70vh;
+    display: flex;
     justify-content: center;
-    align-content: center;
 }
 
 .card-details{
-    align-self: center;
-    margin: 1rem 1rem;
-    width: 50vw;
+    margin: 3rem;
     height: auto;
-    padding: 2rem;
+    padding: 1.5rem;
     background-color: rgb(217, 3, 104, 0.9);
-    border-radius: 1rem;
 }
 
 .img-details{
     background-color: #fff;
+    border-radius: 0.5rem;
     padding: 0.5rem;
-    border-radius: 1rem;
-    object-fit: cover;
 }
 
 .card-body-details{
     color: #fff;
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 
+@media (max-width: 425px) {
+    .card-body-details{
+        margin-left: 0;
+    }
+}
+
+.card-body-text{
+    margin-top: 1.5rem;
+}
+
+/*Stats*/
 .table-stats{
     width: auto;
     padding: 1.5rem;
@@ -204,4 +219,13 @@ table{
 
 .table-title{
     background-color: rgb(217, 3, 104, 0.8) !important;
+}
+
+footer{
+    min-height: 8vh;
+    background-color: rgb(233, 232, 232, 0.7);
+}
+
+.container-footer{
+    align-items: center;
 }

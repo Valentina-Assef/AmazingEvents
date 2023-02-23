@@ -23,7 +23,7 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
                 <button class="btn btn-nav" type="button" onclick="location.href='#'">HOME</button>
@@ -54,109 +54,81 @@
         <i class="fa-solid fa-angle-right fa-2xl"></i>
       </div>
     </div>
-
-    <div class="first-section d-flex">
-      <div class="div-checkbox">
-        <button class="checkbox-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <input type="checkbox" id="position1" name="position1" value="Category">
-              <label for="position1">Category</label>
-            </li>
-            <li class="nav-item">
-              <input type="checkbox" id="position2" name="position2" value="Category">
-              <label for="position2">Category</label>
-            </li>
-            <li class="nav-item">
-              <input type="checkbox" id="position3" name="position3" value="Category">
+    <div class="first-section">
+      <div class="row check-and-search">
+        <div class="col-md-8 checkbox text-white">
+            <p><input type="checkbox" id="position1" name="position1" value="Category">
+                <label for="position1">Category</label>
+            </p>
+            <p><input type="checkbox" id="position2" name="position2" value="Category">
+                <label for="position2">Category</label>
+            </p>
+            <p> <input type="checkbox" id="position3" name="position3" value="Category">
               <label for="position3">Category</label>
-            </li>
-            <li class="nav-item">
-              <input type="checkbox" id="position4" name="position4" value="Category">
-              <label for="position4">Category</label>
-            </li>
-            <li class="nav-item">
-              <input type="checkbox" id="position5" name="position5" value="Category">
+            </p>
+            <p><input type="checkbox" id="position4" name="position4" value="Category">
+                <label for="position4">Category</label>
+            </p>
+            <p><input type="checkbox" id="position5" name="position5" value="Category">
               <label for="position5">Category</label>
-            </li>
-          </ul>
+            </p>
+        </div>
+        <div class="col-md-4">
+          <div class="container-fluid">   
+            <form class="search" role="search">
+              <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-nav" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+          </div>
         </div>
       </div>
-      <form class="search d-flex" role="search">
-        <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-nav" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
     </div>
-
-      <!--<div class="first-section d-flex">
-        <div class="checkbox d-flex text-white">
-          <input type="checkbox" id="position1" name="position1" value="Category">
-          <label for="position1">Category</label>
-          <input type="checkbox" id="position2" name="position2" value="Category">
-          <label for="position2">Category</label>
-          <input type="checkbox" id="position3" name="position3" value="Category">
-          <label for="position3">Category</label>
-          <input type="checkbox" id="position4" name="position4" value="Category">
-          <label for="position4">Category</label>
-          <input type="checkbox" id="position5" name="position5" value="Category">
-          <label for="position5">Category</label>
+    <div class="card-section d-flex">
+      <div class="card card-index">
+        <img src="./assets/img/cinema.jpg" class="card-img-top" alt="cinema">
+        <div class="card-body">
+          <h5 class="card-title text-center">Cinema</h5>
+          <p class="card-text text-center">Some quick example text to build</p>
         </div>
-        <div>
-          <form class="search d-flex" role="search">
-            <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-nav" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-          </form>
+        <div class="footer-card d-flex">
+          <P>Precio $0000</P>
+          <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
+        </div> 
+      </div>
+      <div class="card card-index">
+        <img src="./assets/img/costume_party.jpg" class="card-img-top" alt="costume_party">
+        <div class="card-body">
+          <h5 class="card-title text-center">Costume Party</h5>
+          <p class="card-text text-center">Some quick example text to build</p>
         </div>
-      </div>-->
-      <div class="card-section d-flex">
-        <div class="card card-index">
-          <img src="./assets/img/cinema.jpg" class="card-img-top" alt="cinema">
-          <div class="card-body">
-            <h5 class="card-title text-center">Cinema</h5>
-            <p class="card-text text-center">Some quick example text to build</p>
-          </div>
-          <div class="footer-card d-flex">
-            <P>Precio $0000</P>
-            <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
-          </div> 
-        </div>
-        <div class="card card-index">
-          <img src="./assets/img/costume_party.jpg" class="card-img-top" alt="costume_party">
-          <div class="card-body">
-            <h5 class="card-title text-center">Costume Party</h5>
-            <p class="card-text text-center">Some quick example text to build</p>
-          </div>
-          <div class="footer-card d-flex">
-            <P>Precio $0000</P>
-            <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
-          </div>
-        </div>
-        <div class="card card-index">
-          <img src="./assets/img/food_fair.jpg" class="card-img-top" alt="food_fair">
-          <div class="card-body">
-            <h5 class="card-title text-center">Food Fair</h5>
-            <p class="card-text text-center">Some quick example text to build</p>
-          </div>
-          <div class="footer-card d-flex">
-            <P>Precio $0000</P>
-            <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
-          </div>
-        </div>
-        <div class="card card-index">
-          <img src="./assets/img/marathon.jpg" class="card-img-top" alt="marathon">
-          <div class="card-body">
-            <h5 class="card-title text-center">Marathon</h5>
-            <p class="card-text text-center">Some quick example text to build</p>
-          </div>
-          <div class="footer-card d-flex">
-            <P>Precio $0000</P>
-            <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
-          </div>
+        <div class="footer-card d-flex">
+          <P>Precio $0000</P>
+          <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
         </div>
       </div>
+      <div class="card card-index">
+        <img src="./assets/img/food_fair.jpg" class="card-img-top" alt="food_fair">
+        <div class="card-body">
+          <h5 class="card-title text-center">Food Fair</h5>
+          <p class="card-text text-center">Some quick example text to build</p>
+        </div>
+        <div class="footer-card d-flex">
+          <P>Precio $0000</P>
+          <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
+        </div>
+      </div>
+      <div class="card card-index">
+        <img src="./assets/img/marathon.jpg" class="card-img-top" alt="marathon">
+        <div class="card-body">
+          <h5 class="card-title text-center">Marathon</h5>
+          <p class="card-text text-center">Some quick example text to build</p>
+        </div>
+        <div class="footer-card d-flex">
+          <P>Precio $0000</P>
+          <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
+        </div>
+      </div>
+    </div>
   </main>
   <footer>
     <div class="container-fluid text-center">
@@ -167,7 +139,7 @@
           <i class="fa-brands fa-whatsapp fa-2xl"></i>
         </div>
         <div class="col-sm-4 col-md-6">
-          <h5>&#9400;FE11-TM Valentina Assef</h5>
+          <h5>FE11-TM Valentina Assef</h5>
         </div>
       </div>
     </div>
