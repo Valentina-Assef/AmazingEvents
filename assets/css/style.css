@@ -7,15 +7,25 @@
 body{
     width: 100%;
     height: 100vh;
-    background-image: url(../img/banner1.jpg);
+    background-image: url(../img/banner.jpg); 
 }
 
 header{
     min-height: 12vh;
+    background-color: rgb(233, 232, 232, 0.1);
 }
 
+/*Navbar*/
 .navbar{
-    padding: 1rem;
+    min-height: 12vh;
+}
+
+.nav-item{
+    margin: 0.3rem;
+}
+
+.navbar-toggler{
+    background-color: #d90368;
 }
 
 .btn-nav{
@@ -50,24 +60,28 @@ main{
 }
 
 .first-section{
-    margin: 0.5rem 3rem;
+    margin: 1.5rem 3rem;
     padding: 0.5rem 2rem;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.checkbox{
-    flex-wrap: wrap;
+.div-checkbox{
+    flex-direction: column;
+    color: #fff;
+}
+
+.checkbox-toggler{
+    color: black;
+    background-color: #d90368;
 }
 
 .checkbox > label{
     margin: 0 1.5rem 0 0.3rem;
 }
 
-.search{
-    margin-top: 0.5rem;
-}
+
 
 .card-section{
     margin: 1rem 3rem;
@@ -97,18 +111,15 @@ main{
 
 footer{
     min-height: 8vh;
-    justify-content: space-between;
-    align-items: center;
     background-color: rgb(233, 232, 232, 0.7);
 }
 
-.social-network, h3{
-    margin: 0 4rem;
-    padding: 0.5rem;
+.container-footer{
+    align-items: center;
 }
 
 .fa-2xl{
-    margin-left: 1.5rem;
+    margin: 1.5rem 1rem;   
 }
 
 .form-contact{
