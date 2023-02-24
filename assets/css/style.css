@@ -183,6 +183,12 @@ main{
     padding: 0.5rem;
 }
 
+.img-card-details{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 .card-body-details{
     color: #fff;
     margin-left: 1rem;
@@ -206,6 +212,14 @@ main{
     border-radius: 1rem;
     background-color: rgb(233, 232, 232, 0.3);
     flex-direction: column;
+    overflow: hidden;
+}
+
+@media (max-width: 600px){
+    .table-stats{
+        margin: 2rem 0;
+        padding: 1rem;
+    }
 }
 
 th, td {
