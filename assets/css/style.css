@@ -53,6 +53,7 @@ main{
 }
 
 .home{
+    justify-content: space-between;
     align-items: center;
     padding: 0 3rem;
     background-color: rgb(233, 232, 232, 0.7);
