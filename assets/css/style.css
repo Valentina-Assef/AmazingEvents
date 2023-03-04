@@ -59,6 +59,15 @@ main{
     background-color: rgb(233, 232, 232, 0.7);
 }
 
+a{
+    color: black;
+    outline: none !important;
+}
+
+a:hover{
+    color: #d90368;
+}
+
 /*Checkbox y search*/
 .first-section {
     margin: 2rem 4rem; 
