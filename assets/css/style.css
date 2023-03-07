@@ -117,11 +117,13 @@ a:hover{
 
 .card-index{
     width: 18rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .card-img-top{
     height: 50%;
+    object-fit: cover;
 }
 
 .footer-card{
