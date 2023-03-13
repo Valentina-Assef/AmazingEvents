@@ -1,5 +1,5 @@
 import data from "./amazing.js";
-import  {pastEvents} from "./functions.js";
+import {pastEvents} from "./functions.js";
 
-pastEvents(data, data.currentDate);
-    
+let container = document.getElementById("cardSection");
+pastEvents(data, container);

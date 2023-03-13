@@ -1,61 +1,39 @@
-import data from "./amazing.js";
+function newCards(arrayData, container){
+  let cardsFragment = document.createDocumentFragment();
+  for (let i = 0; i < arrayData.length; i++) {
+    let card = document.createElement('div');
+    card.classList.add('card', 'card-index');
+    card.innerHTML = `
+      <img src=${arrayData[i].image} class="card-img-top" alt=""/>
+      <div class="card-body">
+        <h5 class="card-title text-center">${arrayData[i].name}</h5>
+        <h6 class="card-date text-center">${arrayData[i].date}</h6>
+        <p class="card-text text-center">${arrayData[i].description}</p>
+      </div>
+      <div class="footer-card d-flex">
+        <P>Precio $${arrayData[i].price}</P>
+        <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
+      </div>
+    `;
+    cardsFragment.appendChild(card);
+  }
+  container.appendChild(cardsFragment);
+};
 
-function pastEvents(array, date){
-    for(let evento of data.events) {
-        if (evento.date < data.currentDate) {
-          let card = `<div class="card card-index">
-            <img src=${evento.image} class="card-img-top" alt=""/>
-              <div class="card-body">
-                <h5 class="card-title text-center">${evento.name}</h5>
-                <h6 class="card-date text-center">${evento.date}</h6>
-                <p class="card-text text-center">${evento.description}</p>
-              </div>
-              <div class="footer-card d-flex">
-                <P>Precio $${evento.price}</P>
-                <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
-              </div>
-            </div>`
-          cardSection.innerHTML += card;
-        }
-    }
+function pastEvents(data, container) {
+  let filteredEvents = data.events.filter(evento => Date.parse(evento.date) < Date.parse(data.currentDate));
+  
+  filteredEvents.forEach(evento => {
+    newCards([evento], container);
+  });
 }
 
-function upcommingEvents(array, date){
-    for(let evento of data.events) {
-        if (evento.date > data.currentDate) {
-          let card = `<div class="card card-index">
-            <img src=${evento.image} class="card-img-top" alt=""/>
-              <div class="card-body">
-                <h5 class="card-title text-center">${evento.name}</h5>
-                <h6 class="card-date text-center">${evento.date}</h6>
-                <p class="card-text text-center">${evento.description}</p>
-              </div>
-              <div class="footer-card d-flex">
-                <P>Precio $${evento.price}</P>
-                <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
-              </div>
-            </div>`
-          cardSection.innerHTML += card;
-        }
-    }
+function upcommingEvents(data, container){
+  let filteredEvents = data.events.filter(evento => Date.parse(evento.date) > Date.parse(data.currentDate));
+  
+  filteredEvents.forEach(evento => {
+    newCards([evento], container);
+  });
 }
 
-function agregarTodos(array) {
-    for(let evento of data.events) {
-        let card = `<div class="card card-index">
-        <img src=${evento.image} class="card-img-top" alt=""/>
-          <div class="card-body">
-            <h5 class="card-title text-center">${evento.name}</h5>
-            <h6 class="card-date text-center">${evento.date}</h6>
-            <p class="card-text text-center">${evento.description}</p>
-          </div>
-          <div class="footer-card d-flex">
-            <P>Precio $${evento.price}</P>
-            <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
-          </div>
-        </div>`
-        cardSection.innerHTML += card
-    }
-}
-
-export {pastEvents, upcommingEvents, agregarTodos};
+export {newCards, pastEvents, upcommingEvents};

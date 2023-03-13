@@ -1,4 +1,6 @@
-import data from "./amazing.js"
-import  {agregarTodos} from "./functions.js";
+import data from "./amazing.js";
+import  {newCards} from "./functions.js";
 
-agregarTodos(data);
+let container = document.getElementById("cardSection");
+
+newCards(data.events, container);
