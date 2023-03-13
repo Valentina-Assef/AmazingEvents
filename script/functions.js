@@ -1,7 +1,5 @@
-import data from "./amazing.js"
-
 function pastEvents(array, date){
-    for(const evento of data.events) {
+    for(let evento of data.events) {
         if (evento.date < data.currentDate) {
           const card = `<div class="card card-index">
             <img src=${evento.image} class="card-img-top" alt=""/>
@@ -15,11 +13,9 @@ function pastEvents(array, date){
                 <a href="./details.html" class="btn btn-see-more">Ver mas...</a>
               </div>
             </div>`
-          const cardSection = document.getElementById("cardSection");
           cardSection.innerHTML += card;
         }
     }
 }
 
-pastEvents(data.events, data.currentDate);
-    
+export {pastEvents};
