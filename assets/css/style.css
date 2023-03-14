@@ -183,6 +183,7 @@ a:hover{
 
 .card-details{
     margin: 3rem;
+    max-width: 60%;
     height: auto;
     padding: 1.5rem;
     background-color: rgb(217, 3, 104, 0.9);
