@@ -24,8 +24,9 @@ function pastEvents(data, container) {
   let filteredEvents = data.events.filter(evento => Date.parse(evento.date) < Date.parse(data.currentDate));
   
   filteredEvents.forEach(evento => {
-    newCards([evento], container);
+    newCards([evento], container);  
   });
+  return filteredEvents;
 }
 
 function upcommingEvents(data, container){
