@@ -1,4 +1,8 @@
 function allCards(arrayData, container){
+  if(arrayData.length == 0){
+    container.innerHTML = `<h2 class="text-white">No se encontraron coincidencias</h2>`;
+    return;
+  }
   let cardsFragment = document.createDocumentFragment();
     for (let evento of arrayData){
     let card = document.createElement('div');
@@ -36,6 +40,40 @@ function upcommingEvents(data, container){
   });
 };
 
+function newCheckbox(data, containerCheckbox){
+  let arrayCategories = data.events.map(evento => evento.category)
+  let setCategories = new Set(arrayCategories)
+  let arrayChecks = Array.from(setCategories)
+  let checkboxes = ''
+  arrayChecks.forEach(category => {
+    checkboxes += 
+    `<p><input type="checkbox" id="${category}" name="position1" value="${category}">
+    <label for="${category}">${category}</label>
+    </p>`
+  })
+  containerCheckbox.innerHTML = checkboxes
+}
+
+function filtrarPorSearch(data, texto){ //Necesito que devuelva un return para trabajar con esa info
+  let arrayFiltrado = data.events.filter(evento => evento.name.toLowerCase().includes(texto.toLowerCase()));
+  return arrayFiltrado;
+}
+
+function filtrarPorCheckbox(data){
+  let checkboxes = document.querySelectorAll("input[type='checkbox']")
+  let arrayChecks = Array.from(checkboxes);
+  let arrayChequeados = arrayChecks.filter(check => check.checked)
+  if (arrayChequeados.length === 0) {
+      return data.events;
+  }
+  let arrayCategories = arrayChequeados.map(checkChecked => checkChecked.value)
+  let arrayFiltradoChecks = data.events.filter(evento => arrayCategories.includes(evento.category))
+  if(arrayFiltradoChecks){
+      return arrayFiltradoChecks;
+  }
+  return data;
+}
+
 function cardDetails(evento, container){
   let card = document.createElement('div')
   card.classList = 'card card-details'
@@ -62,4 +100,4 @@ function cardDetails(evento, container){
   container.appendChild(card);
 };
 
-export {allCards, pastEvents, upcommingEvents, cardDetails};
+export {allCards, pastEvents, upcommingEvents, cardDetails, newCheckbox, filtrarPorSearch, filtrarPorCheckbox};
