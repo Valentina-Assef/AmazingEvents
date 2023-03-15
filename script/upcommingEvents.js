@@ -15,7 +15,7 @@ newCheckbox(data, containerCheckbox);
 containerCheckbox.addEventListener('change', () => {
     let arrayFiltrado = filtrarPorCheckbox(data)
     container.innerHTML = '';
-     //definir una funcion drawCards como hizo Edu?
+    allCards(arrayFiltrado, container) //NO FUNCIONA
 })
 
 filtrarPorCheckbox(data)
@@ -26,5 +26,5 @@ let input = document.getElementById("searchInput");
 input.addEventListener('input', () => {
     let arrayFiltrado = filtrarPorSearch(data, input.value);
     container.innerHTML = '';
-    //definir una funcion drawCards como hizo Edu?
+    allCards(arrayFiltrado, container) //NO FUNCIONA
 })

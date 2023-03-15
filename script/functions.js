@@ -1,10 +1,10 @@
-function allCards(arrayData, container){
-  if(arrayData.length == 0){
+function allCards(data, container){
+  if(data.length == 0){
     container.innerHTML = `<h2 class="text-white">No se encontraron coincidencias</h2>`;
     return;
   }
   let cardsFragment = document.createDocumentFragment();
-    for (let evento of arrayData){
+    for (let evento of data){
     let card = document.createElement('div');
     card.classList.add('card', 'card-index');
     card.innerHTML = 
@@ -22,6 +22,29 @@ function allCards(arrayData, container){
   }
   container.appendChild(cardsFragment);
 };
+
+function showCards(data){
+  if(data.length == 0){
+      container.innerHTML = `<h2 class="text-white">No se encontraron coincidencias</h2>`;
+      return;
+    }
+  let cards = ''
+  data.events.forEach(evento => {
+      cards += `<div class="card card-index">
+      <img src=${evento.image} class="card-img-top" alt=${evento.name}/>
+      <div class="card-body">
+        <h5 class="card-title text-center">${evento.name}</h5>
+        <h6 class="card-date text-center">${evento.date}</h6>
+        <p class="card-text text-center">${evento.description}</p>
+      </div>
+      <div class="footer-card d-flex">
+        <P>Precio $${evento.price}</P>
+        <a href="./details.html?id=${evento._id}" class="btn btn-see-more">Ver mas...</a>
+      </div>
+      </div>`
+  })
+  container.innerHTML = cards;
+}
 
 function pastEvents(data, container) {
   let filteredEvents = data.events.filter(evento => Date.parse(evento.date) < Date.parse(data.currentDate));
@@ -74,6 +97,12 @@ function filtrarPorCheckbox(data){
   return data;
 }
 
+function combinedFilter(){
+  let firstFilter = filtrarPorCheckbox(data)
+  let secondFilter = filtrarPorSearch(firstFilter, input.value)
+  showCards (secondFilter, container)
+}
+
 function cardDetails(evento, container){
   let card = document.createElement('div')
   card.classList = 'card card-details'
@@ -100,4 +129,4 @@ function cardDetails(evento, container){
   container.appendChild(card);
 };
 
-export {allCards, pastEvents, upcommingEvents, cardDetails, newCheckbox, filtrarPorSearch, filtrarPorCheckbox};
+export {allCards, showCards, pastEvents, upcommingEvents, newCheckbox, filtrarPorSearch, filtrarPorCheckbox, combinedFilter, cardDetails};
