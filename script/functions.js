@@ -75,31 +75,36 @@ function combinedFilter(list){
   showCards(secondFilter);
 }
 
-/*
-function cardDetails(evento, container){
-  let card = document.createElement('div')
-  card.classList = 'card card-details'
-  card.innerHTML = 
-      `<div class="row g-0">
-        <div class="col-md-6 img-details">
-          <img src=${evento.image} class="img-fluid img-card-details" alt=${evento.name}>
-        </div>
-        <div class="col-md-6">
-          <div class="card-body card-body-details">
-            <h5 class="card-title text-center">${evento.name}</h5>
-            <div class="card-body-text">
-              <p class="card-text">Date: ${evento.date}</p>
-              <p class="card-text">Description: ${evento.description}</p>
-              <p class="card-text">Category: ${evento.category}</p>
-              <p class="card-text">Place: ${evento.place}</p>
-              <p class="card-text">Capacity: ${evento.capacity}</p>
-              <p class="card-text">Assistance: ${evento.assistance}</p>
-              <p class="card-text">Price: $${evento.price}</p>
+function cardDetails(evento){
+  let container = document.getElementById("cardDetails");
+  let card = "";
+  card = `<div class="card card-details">
+            <div class="row g-0">
+              <div class="col-md-6 img-details">
+                <img src=${evento.image} class="img-fluid img-card-details" alt=${evento.name}>
+              </div>
+              <div class="col-md-6">
+                <div class="card-body card-body-details">
+                  <h5 class="card-title text-center">${evento.name}</h5>
+                  <div class="card-body-text">
+                    <p class="card-text">Date: ${evento.date}</p>
+                    <p class="card-text">Description: ${evento.description}</p>
+                    <p class="card-text">Category: ${evento.category}</p>
+                    <p class="card-text">Place: ${evento.place}</p>
+                    <p class="card-text">Capacity: ${evento.capacity}</p>`;             
+  if(evento.assistance != undefined){
+    card = card + `<p class="card-text">Assistance: ${evento.assistance}</p`;
+  } else {
+    card = card + `<p class="card-text">Estimate: ${evento.estimate}</p`;
+  }
+  card = card + `
+                <p class="card-text">Price: $${evento.price}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>`
-  container.appendChild(card);
-};*/
+      </div>`;
+  container.innerHTML = card;
+};
 
-export {showCards, upcommingEvents, pastEvents, showCheckbox, categoriesList, filterBySearch, filterByCheckbox, combinedFilter};
+export {showCards, upcommingEvents, pastEvents, showCheckbox, categoriesList, filterBySearch, filterByCheckbox, combinedFilter, cardDetails};
