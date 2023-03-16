@@ -1,30 +1,20 @@
 import data from "./amazing.js";
-import  {upcommingEvents, newCheckbox, filtrarPorSearch, filtrarPorCheckbox} from "./functions.js";
+import {upcommingEvents, showCards, showCheckbox, categoriesList, combinedFilter} from "./functions.js";
 
-//Este container lo utilizo en varias funciones
-let container = document.getElementById("cardSection");
+let checkboxSection = document.getElementById("checkboxSection");
+let searchInput = document.getElementById("searchInput");
 
 //Muestras los eventos futuros
-upcommingEvents(data, container);
+showCards(upcommingEvents(data));
 
-//Muestra cuando se utilizan los checkbox
-let containerCheckbox = document.getElementById('checkboxSection');
+//Checkbox
+showCheckbox(categoriesList(data));
 
-newCheckbox(data, containerCheckbox);
+checkboxSection.addEventListener('change', () => {
+    combinedFilter(upcommingEvents(data));
+});
 
-containerCheckbox.addEventListener('change', () => {
-    let arrayFiltrado = filtrarPorCheckbox(data)
-    container.innerHTML = '';
-    allCards(arrayFiltrado, container) //NO FUNCIONA
-})
-
-filtrarPorCheckbox(data)
-
-//Muestra cuando se utiliza el search
-let input = document.getElementById("searchInput");
-
-input.addEventListener('input', () => {
-    let arrayFiltrado = filtrarPorSearch(data, input.value);
-    container.innerHTML = '';
-    allCards(arrayFiltrado, container) //NO FUNCIONA
-})
+//Search
+searchInput.addEventListener('input', () => {
+    combinedFilter(upcommingEvents(data));
+});
