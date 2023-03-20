@@ -32,12 +32,20 @@ function showCards(list){
 }
 
 function pastEvents(list){
-  let pastEvent = list.filter((element) => Date.parse(element.date) < Date.parse(list.currentDate));
+  let currentDate = new Date();
+  let pastEvent = list.filter((element) => {
+    let eventDate = new Date(element.date);
+    return eventDate < currentDate && eventDate.getTime() < currentDate.getTime();
+  });
   return pastEvent;
 };
-
+  
 function upcommingEvents(list){
-  let futureEvents = list.filter((element) => Date.parse(element.date) > Date.parse(list.currentDate));
+  let currentDate = new Date();
+  let futureEvents = list.filter((element) => {
+    let eventDate = new Date(element.date);
+    return eventDate > currentDate && eventDate.getTime() > currentDate.getTime();
+  });
   return futureEvents;
 };
 
