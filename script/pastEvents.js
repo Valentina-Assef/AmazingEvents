@@ -1,20 +1,22 @@
-import data from "./amazing.js";
-import {pastEvents, showCards, showCheckbox, categoriesList, combinedFilter} from "./functions.js";
+import {getData, pastEvents, showCards, showCheckbox, categoriesList, combinedFilter} from "./functions.js";
 
 let checkboxSection = document.getElementById("checkboxSection");
 let searchInput = document.getElementById("searchInput");
 
-//Muestras los eventos futuros
-showCards(pastEvents(data));
+//Llamo a la data
+let {events} = await getData()
+
+//Muestras los eventos pasados
+showCards(pastEvents(events)); //Falla en pastEvents?
 
 //Checkbox
-showCheckbox(categoriesList(data));
+showCheckbox(categoriesList(events));
 
 checkboxSection.addEventListener('change', () => {
-    combinedFilter(pastEvents(data));
+    combinedFilter(pastEvents(events));
 });
 
 //Search
 searchInput.addEventListener('input', () => {
-    combinedFilter(pastEvents(data));
+    combinedFilter(pastEvents(events));
 });

@@ -1,3 +1,13 @@
+async function getData(){
+  let list = await fetch("./data/amazing.json")
+            .then(response => response.json())
+            .then(list => {
+                return list;
+            })
+
+  return list
+}
+
 function showCards(list){
   if(list.length == 0){
     cardSection.innerHTML = `<h2 class="text-white">No results found</h2>`;
@@ -22,18 +32,18 @@ function showCards(list){
 }
 
 function pastEvents(list){
-  let pastEvent = list.events.filter((element) => Date.parse(element.date) < Date.parse(list.currentDate));
+  let pastEvent = list.filter((element) => Date.parse(element.date) < Date.parse(list.currentDate));
   return pastEvent;
 };
 
 function upcommingEvents(list){
-  let futureEvents = list.events.filter((element) => Date.parse(element.date) > Date.parse(list.currentDate));
+  let futureEvents = list.filter((element) => Date.parse(element.date) > Date.parse(list.currentDate));
   return futureEvents;
 };
 
 function showCheckbox(list){
   let checkboxes = "";
-  list.forEach((category) => { //reemplazar data por list
+  list.forEach((category) => {
     checkboxes += 
     `<p><input type="checkbox" id="${category}" name="position1" value="${category}">
     <label for="${category}">${category}</label>
@@ -44,8 +54,8 @@ function showCheckbox(list){
 
 function categoriesList(list){
   let categories = [];
-  list.events.forEach((element) => {
-    categories.push(element.category.toLowerCase());
+  list.forEach((element) => {
+    categories.push(element.category);
   });
   categories = Array.from(new Set(categories));
   categories.sort();
@@ -107,4 +117,4 @@ function cardDetails(evento){
   container.innerHTML = card;
 };
 
-export {showCards, upcommingEvents, pastEvents, showCheckbox, categoriesList, filterBySearch, filterByCheckbox, combinedFilter, cardDetails};
+export {getData, showCards, upcommingEvents, pastEvents, showCheckbox, categoriesList, filterBySearch, filterByCheckbox, combinedFilter, cardDetails};
