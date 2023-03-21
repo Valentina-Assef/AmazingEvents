@@ -6,8 +6,8 @@ let searchInput = document.getElementById("searchInput");
 //Llamo a la data
 let {events} = await getData()
 
-//Muestras los eventos pasados
-showCards(pastEvents(events)); //Falla en pastEvents?
+//Muestra los eventos pasados
+showCards(pastEvents(events));
 
 //Checkbox
 showCheckbox(categoriesList(events));

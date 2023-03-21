@@ -31,11 +31,11 @@ function showCards(list){
   cardSection.innerHTML = cards;
 }
 
-function pastEvents(list){
+function pastEvents(list){ //Importante declarar currentDate
   let currentDate = new Date();
   let pastEvent = list.filter((element) => {
     let eventDate = new Date(element.date);
-    return eventDate < currentDate && eventDate.getTime() < currentDate.getTime();
+    return eventDate.getTime() < currentDate.getTime();
   });
   return pastEvent;
 };
@@ -44,7 +44,7 @@ function upcommingEvents(list){
   let currentDate = new Date();
   let futureEvents = list.filter((element) => {
     let eventDate = new Date(element.date);
-    return eventDate > currentDate && eventDate.getTime() > currentDate.getTime();
+    return eventDate.getTime() > currentDate.getTime();
   });
   return futureEvents;
 };
@@ -125,4 +125,75 @@ function cardDetails(evento){
   container.innerHTML = card;
 };
 
-export {getData, showCards, upcommingEvents, pastEvents, showCheckbox, categoriesList, filterBySearch, filterByCheckbox, combinedFilter, cardDetails};
+//Stats
+
+//Table1 Events
+function showEventsStatistics(list) {
+    let table = document.getElementById("tableEvents")
+    let tbody = table.querySelector("tbody");
+    let row = "";
+    row = `<tr>
+            <td>${highestAttendace(list)}</td>
+            <td>${lowestAttendace(list)}</td>
+            <td>${largerCapacity(list)}</td>
+        </tr>`;
+    tbody.innerHTML = row;
+}
+
+//Largest Capacity Event
+function largerCapacity(list){
+  let maxCapacity = Math.max(...list.map(evento => evento.capacity))
+  let evento = list.find(evento => evento.capacity == maxCapacity)
+  return evento.name
+}
+
+//Event with the highest percentage of attendance
+function highestAttendace(list){
+  let maxAttendace = Math.max(...(pastEvents(list)).map(evento => (evento.assistance / evento.capacity) * 100));
+  let evento = (pastEvents(list)).find(evento => (evento.assistance / evento.capacity) * 100 == maxAttendace);
+  return evento.name
+}
+
+//Event with the lowest percentage of attendance
+function lowestAttendace(list){
+  let minAttendace = Math.min(...(pastEvents(list)).map(evento => (evento.assistance / evento.capacity) * 100));
+  let evento = (pastEvents(list)).find(evento => (evento.assistance / evento.capacity) * 100 == minAttendace);
+  return evento.name
+}
+
+//Table2 Upcoming Events
+function showUpcomingStatistics(list) {
+  let table = document.getElementById("tableUpcoming")
+  let tbody = table.querySelector("tbody");
+  let categories = categoriesList(list);
+  let row = "";
+  categories.forEach((category) => {
+    row += `<tr>
+          <td>${category}</td>
+          <td></td>
+          <td></td>
+      </tr>`;
+  })
+  tbody.innerHTML = row;
+}
+
+
+
+//Table3 Past Events
+function showPastStatistics(list) {
+  let table = document.getElementById("tablePast")
+  let tbody = table.querySelector("tbody");
+  let categories = categoriesList(list);
+  let row = "";
+  categories.forEach((category) => {
+    row += `<tr>
+          <td>${category}</td>
+          <td></td>
+          <td></td>
+      </tr>`;
+  })
+  tbody.innerHTML = row;
+}
+
+
+export {getData, showCards, upcommingEvents, pastEvents, showCheckbox, categoriesList, filterBySearch, filterByCheckbox, combinedFilter, cardDetails, showEventsStatistics, largerCapacity, highestAttendace, lowestAttendace, showUpcomingStatistics, showPastStatistics};

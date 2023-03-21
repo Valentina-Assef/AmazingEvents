@@ -6,7 +6,7 @@ let searchInput = document.getElementById("searchInput");
 //Llamo a la data
 let {events} = await getData();
 
-//Muestras los eventos futuros
+//Muestra los eventos futuros
 showCards(upcommingEvents(events));
 
 //Checkbox
