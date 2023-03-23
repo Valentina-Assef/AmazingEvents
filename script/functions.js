@@ -142,23 +142,23 @@ function showEventsStatistics(list) {
 
 //Event with the highest percentage of attendance
 function highestAttendace(list){
-  let maxAttendace = Math.max(...(pastEvents(list)).map(evento => (evento.assistance / evento.capacity) * 100));
-  let evento = (pastEvents(list)).find(evento => (evento.assistance / evento.capacity) * 100 == maxAttendace);
-  return evento.name
+  let maxAttendace = Math.max(...(list).map(evento => ((evento.assistance || evento.estimate) / evento.capacity) * 100));
+  let evento = (list).find(evento => ((evento.assistance || evento.estimate) / evento.capacity) * 100 == maxAttendace);
+  return evento.name + ' (' + maxAttendace + '%)';
 }
 
 //Event with the lowest percentage of attendance
 function lowestAttendace(list){
-  let minAttendace = Math.min(...(pastEvents(list)).map(evento => (evento.assistance / evento.capacity) * 100));
-  let evento = (pastEvents(list)).find(evento => (evento.assistance / evento.capacity) * 100 == minAttendace);
-  return evento.name
+  let minAttendace = Math.min(...(list).map(evento => ((evento.assistance || evento.estimate) / evento.capacity) * 100));
+  let evento = (list).find(evento => ((evento.assistance || evento.estimate) / evento.capacity) * 100 == minAttendace);
+  return evento.name + ' (' + minAttendace + '%)';
 }
 
 //Largest Capacity Event
 function largerCapacity(list){
   let maxCapacity = Math.max(...list.map(evento => evento.capacity))
   let evento = list.find(evento => evento.capacity == maxCapacity)
-  return evento.name
+  return evento.name + ' (' + maxCapacity + ')';
 }
 
 //Table2 Upcoming Events Statistics
