@@ -140,13 +140,6 @@ function showEventsStatistics(list) {
     tbody.innerHTML = row;
 }
 
-//Largest Capacity Event
-function largerCapacity(list){
-  let maxCapacity = Math.max(...list.map(evento => evento.capacity))
-  let evento = list.find(evento => evento.capacity == maxCapacity)
-  return evento.name
-}
-
 //Event with the highest percentage of attendance
 function highestAttendace(list){
   let maxAttendace = Math.max(...(pastEvents(list)).map(evento => (evento.assistance / evento.capacity) * 100));
@@ -161,6 +154,13 @@ function lowestAttendace(list){
   return evento.name
 }
 
+//Largest Capacity Event
+function largerCapacity(list){
+  let maxCapacity = Math.max(...list.map(evento => evento.capacity))
+  let evento = list.find(evento => evento.capacity == maxCapacity)
+  return evento.name
+}
+
 //Table2 Upcoming Events Statistics
 function showUpcomingStatistics(list) {
   let table = document.getElementById("tableUpcoming")
@@ -171,7 +171,7 @@ function showUpcomingStatistics(list) {
     row += `<tr>
           <td>${category}</td>
           <td>$${revenuesByCategories(list, category, "upcoming")}</td>
-          <td></td>
+          <td>${percentageOfAttendance(list, category, "upcoming")}%</td>
       </tr>`;
   })
   tbody.innerHTML = row;
@@ -187,7 +187,7 @@ function showPastStatistics(list) {
     row += `<tr>
           <td>${category}</td>
           <td>$${revenuesByCategories(list, category, "past")}</td>
-          <td></td>
+          <td>${percentageOfAttendance(list, category, "past")}%</td>
       </tr>`;
   })
   tbody.innerHTML = row;
@@ -212,4 +212,23 @@ let revenues = filteredEvents.reduce((total, event) => {
   return revenues; 
 }
 
-export {getData, showCards, upcommingEvents, pastEvents, showCheckbox, categoriesList, filterBySearch, filterByCheckbox, combinedFilter, cardDetails, showEventsStatistics, largerCapacity, highestAttendace, lowestAttendace, showUpcomingStatistics, showPastStatistics, revenuesByCategories };
+//Percentage of attendance by category
+function percentageOfAttendance(list, category, date){
+  if(date === "past"){
+    date = pastEvents(list);
+  } else if((date === "upcoming")){
+    date = upcommingEvents(list);
+  } else {
+    return "Error: Invalid date"
+  }
+
+let filteredEvents = date.filter(event => event.category === category);
+let totalAssistance = filteredEvents.reduce((acc, event) => acc + (event.assistance || event.estimate), 0);
+let totalCapacity = filteredEvents.reduce((acc, event) => acc + event.capacity, 0);
+let percentage = (totalAssistance / totalCapacity) * 100;
+
+return percentage.toFixed(2);
+}
+
+
+export {getData, showCards, upcommingEvents, pastEvents, showCheckbox, categoriesList, filterBySearch, filterByCheckbox, combinedFilter, cardDetails, showEventsStatistics, largerCapacity, highestAttendace, lowestAttendace, showUpcomingStatistics, showPastStatistics, revenuesByCategories, percentageOfAttendance };
