@@ -161,39 +161,55 @@ function lowestAttendace(list){
   return evento.name
 }
 
-//Table2 Upcoming Events
+//Table2 Upcoming Events Statistics
 function showUpcomingStatistics(list) {
   let table = document.getElementById("tableUpcoming")
   let tbody = table.querySelector("tbody");
-  let categories = categoriesList(list);
+  let categories = categoriesList(upcommingEvents(list));
   let row = "";
   categories.forEach((category) => {
     row += `<tr>
           <td>${category}</td>
-          <td></td>
+          <td>$${revenuesByCategories(list, category, "upcoming")}</td>
           <td></td>
       </tr>`;
   })
   tbody.innerHTML = row;
 }
 
-
-
-//Table3 Past Events
+//Table3 Past Events Statistics
 function showPastStatistics(list) {
   let table = document.getElementById("tablePast")
   let tbody = table.querySelector("tbody");
-  let categories = categoriesList(list);
+  let categories = categoriesList(pastEvents(list));
   let row = "";
   categories.forEach((category) => {
     row += `<tr>
           <td>${category}</td>
-          <td></td>
+          <td>$${revenuesByCategories(list, category, "past")}</td>
           <td></td>
       </tr>`;
   })
   tbody.innerHTML = row;
 }
 
+//Revenues by categories
+function revenuesByCategories(list, category, date){
+  if(date === "past"){
+    date = pastEvents(list);
+  } else if((date === "upcoming")){
+    date = upcommingEvents(list);
+  } else {
+    return "Error: Invalid date"
+  }
 
-export {getData, showCards, upcommingEvents, pastEvents, showCheckbox, categoriesList, filterBySearch, filterByCheckbox, combinedFilter, cardDetails, showEventsStatistics, largerCapacity, highestAttendace, lowestAttendace, showUpcomingStatistics, showPastStatistics};
+let filteredEvents = date.filter(event => event.category === category);
+    
+let revenues = filteredEvents.reduce((total, event) => {
+  return total + ((event.assistance ? event.assistance : event.estimate) * event.price)
+}, 0);
+
+  return revenues; 
+}
+
+export {getData, showCards, upcommingEvents, pastEvents, showCheckbox, categoriesList, filterBySearch, filterByCheckbox, combinedFilter, cardDetails, showEventsStatistics, largerCapacity, highestAttendace, lowestAttendace, showUpcomingStatistics, showPastStatistics, revenuesByCategories };

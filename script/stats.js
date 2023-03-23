@@ -8,3 +8,4 @@ showEventsStatistics(events);
 showUpcomingStatistics(events);
 
 showPastStatistics(events);
+
