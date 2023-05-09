@@ -1,2 +1,4 @@
-# AmazingEvents_ASSEF
+# AmazingEvents
 Proyecto con JS
+
+![](./assets/img/AmazingEvents.png)
