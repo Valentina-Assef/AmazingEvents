@@ -1,4 +1,4 @@
 # AmazingEvents
-Proyecto con JS
+Proyecto con HTML, CSS y JavaScript
 
 ![](./assets/img/AmazingEvents.png)
