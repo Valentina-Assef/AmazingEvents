@@ -1,9 +1,9 @@
-# AmazingEvents
+# Amazing Events
 
 ![](./assets/img/AmazingEvents.png)
 
-### Visit the site at 
+Project developed with HTML, CSS and JavaScript.
 
-Proyecto con HTML, CSS y JavaScript.
+It has functional filters by category and by name.
 
-Con filtros funcionales por categoria y por nombre
+### Visit the site at https://valentina-assef.github.io/AmazingEvents/
